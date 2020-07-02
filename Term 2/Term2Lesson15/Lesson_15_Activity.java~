@@ -1,0 +1,19 @@
+
+class Lesson_15_Activity {
+  
+  
+  public static void main(String[] args) { 
+    String [] list = { "against" , "forms" , "belief" , "government" , "democratic" , "movement" , "understanding"};
+    sortAndPrint(list);
+  }
+  
+  public static void sortAndPrint(String [] list){
+    String min = list[0];
+    for(int i = 0; i < list.length; i++){
+      if(list[i].compareTo(min) < 0){
+        min = list[i];
+      }
+    }
+  }
+  
+}
