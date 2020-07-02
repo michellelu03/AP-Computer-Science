@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.*;
+
+public class Main_starter {
+
+  public static void main (String[] args) {
+    GameWheel game = new GameWheel();
+    ArrayList <PrizeCard> player1 = new ArrayList <PrizeCard>();
+    ArrayList <PrizeCard> player2 = new ArrayList <PrizeCard>();
+    PrizeCard temp;
+    player1.add(game.spinWheel());
+    for(int i = 1; i <5; i++){
+    player1.add((game.spinWheel()));
+    }
+    for(PrizeCard p : player1){
+      for(PrizeCard a : player1){
+        while(p.getID() == a.getID()){
+          game.spinWheel();
+      }
+    }
+    }
+    int total1 = 0;
+    for(PrizeCard p : player1){
+      total1 += p.getPrizeAmount();
+    }
+    System.out.println("Player 1 Total: $" + total1);
+    for(PrizeCard p : player1){ 
+      p.toString();
+    }
+    
+    player2.add(game.spinWheel());
+    for(int i = 1; i <5; i++){
+    player2.add((game.spinWheel()));
+    }
+    for(PrizeCard p : player2){
+      for(PrizeCard a : player2){
+        while(p.getID() == a.getID()){
+          game.spinWheel();
+      }
+    }
+    }
+    int total2 = 0;
+    for(PrizeCard p : player2){
+      total2 += p.getPrizeAmount();
+    }
+    System.out.println("Player 2 Total: $" + total2);
+    for(PrizeCard p : player2){ 
+      p.toString();
+    }
+   
+    if(total1 > total2){
+     System.out.println("Player 1 won by $" + (total1-total2) + "!"); 
+    }else{
+     System.out.println("Player 2 won by $" + (total2-total1) + "!"); 
+    }
+    
+
+
+  }
+}
