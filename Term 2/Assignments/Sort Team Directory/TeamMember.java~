@@ -1,0 +1,27 @@
+class TeamMember{
+ 
+   String fullName = "";
+   String idString = "";
+   
+   
+   public TeamMember(String name, String id){
+     fullName = name;
+     idString = id.substring(0,1).toUpperCase();
+     int last = 1;
+     for(int i = 1; i < id.length(); i++){
+       if(indexAt(i) == 32){
+         idString += id.substring(last, i).toLowerCase() + id.indexAt(i+1);
+         last = i+1;
+       }
+     }
+     
+   }
+   public String toString(){
+     return name;
+   }
+
+   public int compareTo(TeamMember other){
+     
+   }
+   
+}
