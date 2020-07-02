@@ -1,0 +1,234 @@
+/*import java.util.Scanner;
+import java.lang.Math;
+
+class Assignment6_namesMerge {
+  
+  
+  public static void main(String[] args) { 
+    
+  
+  Scanner scan = new Scanner(System.in);
+  String [] names1 = new String [10000];
+  String [] names2 = new String [10000];
+  
+  String input = " ";
+  String input2 = " ";
+  int b = 0, c = 0;
+  
+  //Prompts for first array of names
+  System.out.println("Enter the values for the first array, up to 10000 values, enter 'End' to quit");
+  for(int i = 0; !(input.toLowerCase().equals("end")); i++){
+    input = scan.nextLine();
+    input = input.toLowerCase();
+    input = input.substring(0,1).toUpperCase() + input.substring(1);
+    if(!(input.equals("End"))){
+       names1[i]= input;
+       b++;
+    }
+   }
+  //Prompts for second array of names
+  System.out.println("Enter the values for the second array, up to 10000 values, enter 'End' to quit");
+  for(int j = 0; !(input2.toLowerCase().equals("end")); j++){
+    input2 = scan.nextLine();
+    input2 = input2.toLowerCase();
+    input2 = input2.substring(0,1).toUpperCase() + input2.substring(1);
+    if(!(input2.equals("End"))){
+      names2[j]= input2;
+      c++;
+    }
+   }
+  
+  //Initializes two new arrays with lengths to get rid of null
+  String [] newNames1 = new String [b];
+  String [] newNames2 = new String [c];
+  
+  //Array1 => new Array1
+  for(int d = 0; d < newNames1.length; d++){
+    newNames1[d] = names1[d];
+  }
+  
+  //Array1 => new Array2
+  for(int e = 0; e < newNames2.length; e++){
+   newNames2[e] = names2[e]; 
+  }
+  
+  //Print First Array
+  System.out.print("\nFirst Array \n");
+  for(int f = 0; f < newNames1.length; f++){
+    System.out.print(newNames1[f] + " ");
+  }          
+  //Print Second Array
+  System.out.print("\nSecond Array \n");
+  for(int a = 0; a < newNames2.length; a++){
+    System.out.print(newNames2[a] + " ");
+    }
+  
+  boolean error = false;
+  for(int g = 0; g < newNames1.length-2; g++){
+    if((newNames1[g].compareTo(newNames1[g+1])) < 0){
+    error = true;
+    g = newNames1.length;
+    }else if((newNames1[g].compareTo(newNames1[g+1])) >= 0){
+     error = false; 
+    }
+  }
+
+    for(int h = 0; h < newNames2.length-2; h++){
+    if((newNames2[h].compareTo(newNames2[h+1])) < 0){
+    error = true;
+    h = newNames2.length;
+    }else if((newNames2[h].compareTo(newNames2[h+1])) > 0){
+     error = false; 
+    }
+  }
+
+    
+    if(error == true){
+      System.out.print("\nError: Arrays not in correct order");
+    }else{
+    int total = b+c;
+    String [] merge = new String[total];
+    
+    int k = 0, l = 0;
+    
+    for(int m = 0; m < merge.length; m++){
+      if((newNames1[k].compareTo(newNames2[l])) < 0){
+       merge[m] = newNames1[k];
+       k++;
+      }else{
+        merge[m] = newNames2[l];
+        l++;
+      }
+    }
+    
+    System.out.print("\nMerged Array \n");
+    for(int n = 0; n < merge.length; n++){
+      System.out.print(merge[n] + " ");
+    }
+    }
+
+  }
+
+}
+*/
+
+import java.util.Scanner;
+import java.lang.Math;
+
+class Main{
+  
+  public static void main(String[] args) { 
+    
+  
+  Scanner scan = new Scanner(System.in);
+  String [] names1 = new String [10000];
+  String [] names2 = new String [10000];
+  
+  String input = " ";
+  String input2 = " ";
+  int b = 0, c = 0;
+  
+  //Prompts for first array of names
+  System.out.println("Enter the values for the first array, up to 10000 values, enter 'End' to quit");
+  for(int i = 0; !(input.toLowerCase().equals("end")); i++){
+    input = scan.nextLine();
+    input = input.toLowerCase();
+    input = input.substring(0,1).toUpperCase() + input.substring(1);
+    if(!(input.equals("End"))){
+       names1[i]= input;
+       b++;
+    }
+   }
+  //Prompts for second array of names
+  System.out.println("Enter the values for the second array, up to 10000 values, enter 'End' to quit");
+  for(int j = 0; !(input2.toLowerCase().equals("end")); j++){
+    input2 = scan.nextLine();
+    input2 = input2.toLowerCase();
+    input2 = input2.substring(0,1).toUpperCase() + input2.substring(1);
+    if(!(input2.equals("End"))){
+      names2[j]= input2;
+      c++;
+    }
+   }
+  
+  //Initializes two new arrays with lengths to get rid of null
+  String [] newNames1 = new String [b];
+  String [] newNames2 = new String [c];
+  
+  //Array1 => new Array1
+  for(int d = 0; d < newNames1.length; d++){
+    newNames1[d] = names1[d];
+  }
+  
+  //Array1 => new Array2
+  for(int e = 0; e < newNames2.length; e++){
+   newNames2[e] = names2[e]; 
+  }
+  
+  //Print First Array
+  System.out.print("\nFirst Array \n");
+  for(int f = 0; f < newNames1.length; f++){
+    System.out.print(newNames1[f] + " ");
+  }          
+  //Print Second Array
+  System.out.print("\n\nSecond Array \n");
+  for(int a = 0; a < newNames2.length; a++){
+    System.out.print(newNames2[a] + " ");
+    }
+  
+  boolean error = false;
+  for(int g = 0; g < newNames1.length-2; g++)
+  {
+    if((newNames1[g].compareTo(newNames1[g+1])) > 0)
+      error = true;
+    }
+  
+
+    for(int h = 0; h < newNames2.length-2; h++){
+      if((newNames2[h].compareTo(newNames2[h+1])) > 0)
+        error = true;
+    }
+  
+
+    
+    if(error == true){
+      System.out.print("\n\nError: Arrays not in correct order");
+    }else{
+    int total = b+c;
+    String [] merge = new String[total];
+    
+    int k = 0, l = 0;
+    
+    for(int m = 0; m < merge.length; m++)
+    {
+      if(k == newNames1.length)
+      {
+        merge[m] = newNames2[l];
+        l++;
+      }
+      else if(l == newNames2.length)
+      {
+        merge[m] = newNames1[k];
+        k++;
+      }
+      else if((newNames1[k].compareTo(newNames2[l])) < 0)
+      {
+        merge[m] = newNames1[k];
+        k++;
+      }
+      else
+      {
+        merge[m] = newNames2[l];
+        l++;
+      }
+    }
+    
+    System.out.println("\n\nMerged Array");
+    for(int n = 0; n < merge.length; n++){
+      System.out.print(merge[n] + " ");
+    }
+    }
+
+  }
+
+}
